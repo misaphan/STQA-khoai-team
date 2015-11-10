@@ -115,3 +115,78 @@ Ta sẽ review code trên dựa vào các danh sách kiểm tra ở phần 1, r�
 * _Are imported data and input arguments tested for validity and completeness?_
 
    Biến n chưa được kiểm tra tính hợp lệ trước khi gán giá trị (VD: giá trị âm là không hợp lệ).
+
+***
+
+Sau khi chỉnh sửa theo các vấn đề ở trên, ta được code mới:
+
+    //Chuong trinh tinh tong cac phan tu cua 1 mang va liet ke so nguyen to trong mang
+    
+    #include <iostream>
+    #include <cmath>
+    using namespace std;
+    const int MAX = 50;
+    
+    //ham kiem tra 1 so la so nguyen to hay ko
+    bool isPrime(int n)
+    {
+        if(n < 2)
+            return false;
+        else
+        {
+            for(int i = 2; i <= sqrt(n); i++)
+                if(n % i == 0)
+                    return false;
+        }
+        return true;
+    }
+    
+    //main
+    int main()
+    {
+        int n, number[MAX], sum = 0;
+        
+        //nhap n
+        do
+        {
+            cout << "Nhap so phan tu cua day so: ";
+            cin >> n;
+            if(n < 0 || n > MAX)
+                cout << "n khong hop le, moi nhap lai.\n";
+            else
+                break;
+        }
+        while(1);
+        
+        //Nhap day so
+        for(int i = 0; i < n; i++)
+        {
+            do
+            {
+                cout << "Nhap phan tu thu " << i + 1 << " : ";
+                cin >> number[i];
+                if(number[i] < 0 || number[i] > 24)
+                    cout << "Ngoai khoang 0 den 24, moi nhap lai.\n";
+                else
+                    break;
+            }
+            while(1);
+        }
+        cout << "------------------------\n";
+        
+        //Tinh tong day so
+        for(int i = 0; i < n; i++)
+            sum = sum + number[i];
+        cout << "Tong day so = " << sum << endl;
+        
+        //Tim so nguyen to 
+        cout << "Cac so nguyen to trong day so: ";
+        for(int i = 0; i < n; i++)
+        {
+            if(isPrime(number[i]))
+                cout << number[i] <<' ';
+        }
+        cout << "\n------------------------\n";
+        system("pause");
+        return 0;
+    }
