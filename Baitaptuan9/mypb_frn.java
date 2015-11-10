@@ -30,7 +30,7 @@ public class ps{
 		//chua xet truong hop tu so bang 0 hoac mau so bang 1
 		return ts+"/"+ms;
 	}
-	public static void main(String args[]) throws Exception {
+	public static void main(String args[]) {
 		ps ps1 = new ps(2,4);
 		ps ps2 = new ps(5,6);
 		ps ps3 = new ps();
