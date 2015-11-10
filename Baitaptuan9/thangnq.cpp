@@ -22,7 +22,7 @@ void main()
         while(1);
     }
     cout << "------------------------\n";
-
+    
     for(int i = 0; i < n; i++)
         s = s + number[i];
     cout << "Tong day so = " << s << endl;
