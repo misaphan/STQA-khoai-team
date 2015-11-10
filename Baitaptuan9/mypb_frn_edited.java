@@ -1,7 +1,7 @@
 // This program allow user to see the summary of 2 fractions
 public class frn{
 	public int nmt,dnt;
-	//numerator and denominator 
+        //numerator and denominator 
 	public frn(){
 		nmt = 1;
 		dnt = 1;
