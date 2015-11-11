@@ -1,0 +1,58 @@
+#include<iostream>
+#include<sstream>
+using namespace std;
+const int maxArraySize=20;
+const int defaultValue=0;
+
+// input function
+int getInteger() {
+    string input;
+    cin >> input; // get input as string
+    stringstream ss(input);
+    int value;
+    if(!(ss >> value)) value=defaultValue; // if input failed, use default
+    return value;
+}
+
+int main() {
+     int i,n, array[maxArraySize];
+     // input array size between 1 and maxArraySize
+     do {
+     cout << "\nNhap so ptu: ";
+     n = getInteger();
+     } while(n<=0||n>maxArraySize);
+     
+     // input value within array
+     for(i=0;i<n;i++){
+         cout << "\nNhap ptu thu " << i+1 << ": ";
+         array[i] = getInteger();
+     }
+         
+     int s=0;
+     //calculate sum
+     for(i=0;i<n;i++)
+       s+=array[i];
+     
+     // show average
+     cout << "\nTrung binh cong: " << (float)s/n;
+     // flush input
+     cin.ignore(numeric_limits<streamsize>::max(),'\n');
+     // yeu cau enter de thoat chuong trinh
+     cout << "\nAn Enter de ket thuc chuong trinh.";
+     cin.ignore(numeric_limits<streamsize>::max(),'\n');
+     return 0;
+}
+
+/*
+Chuong trinh tim trung binh cong cua mot day so
+Structure: dung magic number(20)
+=> chuyen thanh constant maxArraySize
+Documentation: khong co comment
+=> da them comment tuong ung
+Loop/Branches: dung dowhile trong khi co the dung for
+=> da sua lai
+DefensiveProgramming: chua co check khi so ptu qua 20 
+=> da sua bang mot vong dowhile
+                      chua co kiem tra loi khi input sai kieu
+=> da add them ham getInteger de default gia tri ve 0
+*/
