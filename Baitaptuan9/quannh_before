@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+main() {
+     int i,n, array[20];
+     cout << "Nhap so ptu: ";
+     cin >> n;
+     
+     i=0;
+     do {
+         cout << "\nNhap ptu thu " << i+1 << ": ";
+         cin >> array[i];
+         i++;
+     }while(i<n);
+     
+     int s=0;
+     for(int j=0;j<n;j++)
+       s+=array[j];
+     
+     cout << "\nTrung binh cong: " << s/n;
+     cin >> n;
+}
+
+/*
+Chuong trinh tim trung binh cong cua mot day so
+Structure: dung magic number(20)
+Documentation: khong co comment
+Loop/Branches: dung dowhile trong khi co the dung for
+DefensiveProgramming: chua co check khi so ptu qua 20
+                      chua co kiem tra loi khi input sai kieu
+*/
