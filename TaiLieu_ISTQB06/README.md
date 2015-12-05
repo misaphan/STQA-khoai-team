@@ -91,7 +91,7 @@ Công cụ kiểm thử phục vụ thao tác với dữ liệu có những đ�
 <ul>
 <li>screens, characters, bitmaps</li>
 <li>masking and filtering</li>
-<ul>
+</ul>
 * Các công cụ kiểm thử thực thi thường tích hợp khả năng đánh giá
 * Công cụ đánh giá đứng tách biệt là để phục vụ cho các tệp tin hoặc các dữ liệu
 
